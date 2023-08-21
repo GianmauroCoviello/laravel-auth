@@ -21,7 +21,9 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->sentence(3);
             $project->content = $faker->text(250);
-            // $project->title = $faker->sentence(3);
+            $project->slug = $project->generateSlug($project->title);
+
+            $project->save();
         }
     }
 }
