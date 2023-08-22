@@ -20,43 +20,18 @@
         <div class="container-fluid">
             <div class="row d-flex">
                 
-                {{-- <div class="sidebars ">
+                <div class="sidebars ">
                     <h1 class="text-white p-2">BoolFolio</h1>
                     <hr class="text-white">
-                    <ul class=" padding-left-0 ">
-                        <li class="d-flex">
-                            <i class="fa-solid fa-gauge pt-2 pe-2 text-white"></i>
-                            <h4><a  class="text-white" href="#">Dashboard</a></h4>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fa-solid fa-gauge pt-2 pe-2 text-white"></i>
-                            <h4><a  class="text-white" href="#">Posts</a></h4>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fa-solid fa-gauge pt-2 pe-2 text-white"></i>
-                            <h4><a  class="text-white" href="#">Users</a></h4>
-                        </li>
-                        
-                    </ul>
-                </div> --}}
-                <div class="navBar pt-4">
-                    {{-- <nav>
-                        <form action="">
-                            <a href="#">HOME</a>
-                            <a href="#">MENU</a>
-                            <a href="#" class="pe-2">SETTINGS</a>
-                            <input placeholder="Search" type="text" name="" id="">
-                        </form>
-                    </nav> --}}
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <h4><a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a></h4>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <h4><a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a></h4>
                         </li>
                         @endif
                         @else
@@ -80,6 +55,17 @@
                         </li>
                         @endguest
                     </ul>
+                </div>
+                <div class="navBar pt-4">
+                    {{-- <nav>
+                        <form action="">
+                            <a href="#">HOME</a>
+                            <a href="#">MENU</a>
+                            <a href="#" class="pe-2">SETTINGS</a>
+                            <input placeholder="Search" type="text" name="" id="">
+                        </form>
+                    </nav> --}}
+                   
 
 
                     @yield('content')
