@@ -10,30 +10,85 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        
         
         <!-- Scripts -->
-        @vite(['resources/js/app.js', 'resources/scss/style.css'])
+        @vite(['resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" id="app">
         <div class="container-fluid">
-            <div class="row ">
+            <div class="row d-flex">
                 
-                <div class="sidebars ">
-                    <h1 class="text-white">Boolpress</h1>
-                    <hr>
+                {{-- <div class="sidebars ">
+                    <h1 class="text-white p-2">BoolFolio</h1>
+                    <hr class="text-white">
                     <ul class=" padding-left-0 ">
-                        <li ><h4><a  class="text-white" href="#">Dashboard</a></h4></li>
-                        <li ><h4><a  class="text-white" href="#">Posts</a></h4></li>
-                        <li ><h4><a  class="text-white" href="#">Users</a></h4></li>
+                        <li class="d-flex">
+                            <i class="fa-solid fa-gauge pt-2 pe-2 text-white"></i>
+                            <h4><a  class="text-white" href="#">Dashboard</a></h4>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fa-solid fa-gauge pt-2 pe-2 text-white"></i>
+                            <h4><a  class="text-white" href="#">Posts</a></h4>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fa-solid fa-gauge pt-2 pe-2 text-white"></i>
+                            <h4><a  class="text-white" href="#">Users</a></h4>
+                        </li>
+                        
                     </ul>
+                </div> --}}
+                <div class="navBar pt-4">
+                    {{-- <nav>
+                        <form action="">
+                            <a href="#">HOME</a>
+                            <a href="#">MENU</a>
+                            <a href="#" class="pe-2">SETTINGS</a>
+                            <input placeholder="Search" type="text" name="" id="">
+                        </form>
+                    </nav> --}}
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
+                                <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+
+
+                    @yield('content')
+
+                    
+
                 </div>
-                <nav class="d-flex justify-center width-100">
-                    <form>
-                        <input type="text" name="" id="">
-                    </form>
-                </nav>
+
+            
             </div>
         </div>
     </body>

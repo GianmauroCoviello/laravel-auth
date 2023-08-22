@@ -1,7 +1,38 @@
-@import '~bootstrap/scss/bootstrap';
-
-// .sidebars{
-//     background-color: black;
+@import '~bootstrap/scss/bootstrap';    
+@import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 
-// }
+.sidebars{
+    width: 250px;
+    background-color: black;
+    height: 100vh;
+
+    i{
+        font-size: 20px
+    }
+    a{
+        text-decoration: none
+    }
+};
+.padding-left-0{
+    padding-inline-start: 0;
+}
+.searchbar{
+    width: 800px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.navBar{
+
+    width: calc(100% - 280px);
+
+
+    input{
+        width: 550px;
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+
+    
+}
