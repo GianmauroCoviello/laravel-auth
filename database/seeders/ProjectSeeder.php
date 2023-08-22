@@ -21,6 +21,7 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->sentence(3);
             $project->content = $faker->text(250);
+            // ripresa la funzione per inserire lo slug all'interno del titolo
             $project->slug = $project->generateSlug($project->title);
 
             $project->save();
