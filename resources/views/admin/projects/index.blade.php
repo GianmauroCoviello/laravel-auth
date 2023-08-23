@@ -32,14 +32,21 @@
                                         <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-primary">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
-                                       
+
                                     </td>  
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+
                 </div>
+                
+               
             </div>
+            <a href="{{route('admin.projects.create', $project->id)}}" class="btn btn-danger mt-3">
+                <span>Aggiungi un nuovo progetto</span>
+                <i class="fa-solid fa-plus"></i>
+            </a>
         </div>
     </div>
 
