@@ -22,7 +22,7 @@
                 
                 <div class="sidebars pt-3">
                     <div class="d-flex">
-                        <i class="fa-solid fa-newspaper pe-3  pt-4 text-white"></i>
+                        <i class="fa-solid fa-newspaper pe-3 pt-4 text-white"></i>
                         <h1 class="text-white p-2"><em>Boolfolio</em> </h1>
                     </div>
                     

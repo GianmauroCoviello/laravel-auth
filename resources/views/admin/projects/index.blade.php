@@ -27,9 +27,7 @@
                                 <tr>
                                     <td>{{ $project->title}}</td>
                                     <td>{{ $project->content}}</td>
-                                    <td>{{ $project->slug}}</td>
-                                    
-                                   
+                                    <td>{{ $project->slug}}</td>   
                                 </tr>
                             @endforeach
                         </tbody>
