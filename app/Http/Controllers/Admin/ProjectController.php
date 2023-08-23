@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
 {
@@ -39,7 +40,17 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $project = new Project();
+
+        $form_data['slug']= $project->generateSlug($form_data['title']);
+        
+        $project->fill($form_data);
+
+        $project->save();
+
+        return Redirect()->route('admin.projects.index');
     }
 
     /**
