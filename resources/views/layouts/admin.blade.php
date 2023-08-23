@@ -17,8 +17,8 @@
         @vite(['resources/js/app.js'])
     </head>
     <body class="font-sans antialiased" id="app">
-        <div class="container-fluid vh-100">
-            <div class="row d-flex">
+        <div class="container-fluid">
+            <div class="row">
                 
                 <div class="sidebars pt-3">
                     <div class="d-flex">
@@ -63,7 +63,7 @@
                         @endguest
                     </ul>
                 </div>
-                <div class="navBar pt-4">
+                <div class="navBar pt-4 scroll-bar">
                     
 
 

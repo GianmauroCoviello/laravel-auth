@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="card">
+<div class="container p-4">
+    <div class="row ">
+        <div class="col ">
+            <div class="card scroll-bar">
                 <div class="card-header">
                     <div class="card-title">
                         <h3>My Projects</h3>
