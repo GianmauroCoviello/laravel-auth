@@ -17,26 +17,33 @@
         @vite(['resources/js/app.js'])
     </head>
     <body class="font-sans antialiased" id="app">
-        <div class="container-fluid">
+        <div class="container-fluid vh-100">
             <div class="row d-flex">
                 
-                <div class="sidebars ">
-                    <h1 class="text-white p-2">BoolFolio</h1>
+                <div class="sidebars pt-3">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-newspaper pe-3  pt-4 text-white"></i>
+                        <h1 class="text-white p-2"><em>Boolfolio</em> </h1>
+                    </div>
+                    
                     <hr class="text-white">
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
+                        <li class="nav-item d-flex">
+                            <i class="fa-solid fa-right-to-bracket fa-xl pe-3 pt-4 text-white"></i>
                             <h4><a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a></h4>
                         </li>
                         @if (Route::has('register'))
-                        <li class="nav-item">
+                        <li class="nav-item d-flex">
+                            <i class="fa-solid fa-user-plus fa-xl pe-3 pt-4 text-white"></i>
                             <h4><a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a></h4>
                         </li>
                         @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li class="nav-item dropdown d-flex">
+                            <i class="fa-solid fa-user fa-xl pe-3 pt-4 text-white"></i>
+                           <a id="navbarDropdown" class="nav-link dropdown-toggle user text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -57,15 +64,7 @@
                     </ul>
                 </div>
                 <div class="navBar pt-4">
-                    {{-- <nav>
-                        <form action="">
-                            <a href="#">HOME</a>
-                            <a href="#">MENU</a>
-                            <a href="#" class="pe-2">SETTINGS</a>
-                            <input placeholder="Search" type="text" name="" id="">
-                        </form>
-                    </nav> --}}
-                   
+                    
 
 
                     @yield('content')
