@@ -9,6 +9,17 @@
                 <hr>
             </div>
             <div class="col-12">
+                @if ($errors->any())
+
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $err)
+                                    <li>{{$err}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        
+                @endif
                 <form action="{{route('admin.projects.store')}}" method="POST">
                     {{-- token obbligatorio --}}
                     @csrf
@@ -17,7 +28,7 @@
                         <input type="text" name="title" id="title" class="form-control" required>
                     </div>
                     
-                    <div class="form-group mb-5 ">
+                    <div class="form-group mb-3 ">
                         <label class="control-table">Content</label>
                         {{-- <input type="text" name="title" id="title" required> --}}
                         <textarea name="content" id="content"  class="form-control" required></textarea>
@@ -26,6 +37,8 @@
                     <button type="submit" class="btn btn-success mt-4">
                         Salva
                     </button>
+                    {{-- messaggi di errore --}}
+                    
 
 
                 </form>
