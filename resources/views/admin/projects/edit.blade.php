@@ -25,7 +25,7 @@
                 @method('PUT')
                 <div class="form-group mb-3 mt-5">
                     <label class="control-table">Titolo</label>
-                    <input type="text" name="title" id="title" class="form-control"  value="{{ old('title') ?? $project->title}}" required>
+                    <input type="text" name="title" id="title" class="form-control"  value="{{ old('title') ?? $project->title}}">
                 </div>
                 
                 <div class="form-group mb-3 ">
