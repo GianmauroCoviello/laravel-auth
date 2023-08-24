@@ -55,9 +55,7 @@
                         </tbody>
                     </table>
 
-                </div>
-                
-               
+                </div>  
             </div>
             <a href="{{route('admin.projects.create', $project->id)}}" class="btn btn-danger mt-3">
                 <span>Aggiungi un nuovo progetto</span>
