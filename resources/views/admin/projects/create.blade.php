@@ -20,15 +20,20 @@
                         </div>
                         
                 @endif
-                <form action="{{route('admin.projects.store')}}" method="POST">
+                <form action="{{route('admin.projects.store')}}" enctype="multipart/form-data" method="POST">
                     {{-- token obbligatorio --}}
                     @csrf
                     <div class="form-group mb-3 mt-5">
                         <label class="control-table">Titolo</label>
                         <input type="text" name="title" id="title" class="form-control" required>
                     </div>
+
+                    <div class="form-group">
+                        <label class="control-table pe-3">Immagine di copertina</label><br>
+                        <input type="file" class="control-table" name="cover_image" id="cover_image" required>
+                    </div>
                     
-                    <div class="form-group mb-3 ">
+                    <div class="form-group mb-3 mt-4">
                         <label class="control-table">Content</label>
                         {{-- <input type="text" name="title" id="title" required> --}}
                         <textarea name="content" id="content"  class="form-control" required></textarea>

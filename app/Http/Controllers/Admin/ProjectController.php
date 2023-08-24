@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -43,6 +44,14 @@ class ProjectController extends Controller
         $form_data = $request->all();
 
         $project = new Project();
+
+        if ($request->hasFile('cover_image')) {
+            # code...
+            $path = Storage::put('cover_image', $form_data['cover_image']);
+
+            $form_data['cover_image']=$path;
+            
+        }
 
         $form_data['slug']= $project->generateSlug($form_data['title']);
         

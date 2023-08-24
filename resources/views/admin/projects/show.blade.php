@@ -7,7 +7,7 @@
             <div class="col-12 ">
             
                 <h1>{{$project->title}}</h1>
-
+                <img src="{{asset('storage/' . $project->cover_image)}}" alt="">
                 <p>{{$project->content}}</p>
             </div>
             <div class="col">
