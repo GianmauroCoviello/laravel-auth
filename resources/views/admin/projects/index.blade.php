@@ -39,6 +39,7 @@
                                         </a>
                                     </td>
                                     <td>
+                                        {{-- inserita la form per l'eliminazione dei progetti tramite il metodo destroy --}}
                                         <form class="d-inline-block " action="{{route('admin.projects.destroy', $project->id)}}" onsubmit="return confirm('sei sicuro di voler cancellare questo progetto?')" method="POST">
                                             @csrf
                                             @method('DELETE')
