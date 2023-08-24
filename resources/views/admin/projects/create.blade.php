@@ -30,7 +30,7 @@
 
                     <div class="form-group">
                         <label class="control-table pe-3">Immagine di copertina</label><br>
-                        <input type="file" class="control-table" name="cover_image" id="cover_image" required>
+                        <input type="file" class="control-table" name="cover_image" id="cover_image" >
                     </div>
                     
                     <div class="form-group mb-3 mt-4">
