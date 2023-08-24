@@ -33,7 +33,14 @@
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
 
-                                    </td>  
+                                    </td> 
+                                    <td>
+                                        <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-success">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+
+                                    </td> 
+
                                 </tr>
                             @endforeach
                         </tbody>

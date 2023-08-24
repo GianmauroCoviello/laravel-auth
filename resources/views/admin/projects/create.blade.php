@@ -5,7 +5,7 @@
     <div class="container p-4">
         <div class="row ">
             <div class="col-12 ">
-                <h1>Aggiungi un nuovo post</h1>
+                <h1>Aggiungi un nuovo post nei project</h1>
                 <hr>
             </div>
             <div class="col-12">
