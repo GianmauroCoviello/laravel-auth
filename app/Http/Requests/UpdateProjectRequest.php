@@ -13,7 +13,7 @@ class UpdateProjectRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,29 @@ class UpdateProjectRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
-        return [
-            //
-        ];
-    }
+    
+     public function rules()
+     {
+         return [
+             'title'=>'required|max:50'
+ 
+         ];
+ 
+ 
+     }
+ 
+ 
+     // nuova funzione chiave valore per mettere il messaggio di errore in italiano
+     public function messages()
+     {
+         return [
+ 
+             'title.required'=>'il titolo e obbligatorio',
+             'title.max'=>'ERRORE: il titolo supera il limite di caratteri consentito (50)'
+ 
+         ];
+ 
+ 
+     }
+      
 }
