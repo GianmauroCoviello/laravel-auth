@@ -23,7 +23,7 @@ class ProjectSeeder extends Seeder
             $project->content = $faker->text(250);
             // ripresa la funzione per inserire lo slug all'interno del titolo
             $project->slug = $project->generateSlug($project->title);
-
+            $project->cover_image = $faker->imageUrl(640, 480, 'animals', true );
             $project->save();
         }
     }
