@@ -95,6 +95,22 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
+        if ($request->hasFile('cover_image')) {
+            
+            if ($project->cover_image) {
+                
+                Storage::delete($project->cover_image);
+
+
+            }
+
+            $path = Storage::put('cover_image', $request->cover_image);
+
+            $form_data['cover_image'] = $path;
+
+
+        }
+
         $form_data['slug']= $project->generateSlug($form_data['title']);
 
         $project->update($form_data);

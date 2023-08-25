@@ -23,19 +23,19 @@
                 <form action="{{route('admin.projects.store')}}" enctype="multipart/form-data" method="POST">
                     {{-- token obbligatorio --}}
                     @csrf
+                    {{-- title --}}
                     <div class="form-group mb-3 mt-5">
                         <label class="control-table">Titolo</label>
                         <input type="text" name="title" id="title" class="form-control" required>
                     </div>
-
+                    {{-- image --}}
                     <div class="form-group">
                         <label class="control-table pe-3">Immagine di copertina</label><br>
                         <input type="file" class="control-table" name="cover_image" id="cover_image" >
                     </div>
-                    
+                    {{-- content --}}
                     <div class="form-group mb-3 mt-4">
                         <label class="control-table">Content</label>
-                        {{-- <input type="text" name="title" id="title" required> --}}
                         <textarea name="content" id="content"  class="form-control" required></textarea>
                     </div>
 
@@ -43,9 +43,7 @@
                         Salva
                     </button>
                     {{-- messaggi di errore --}}
-                    
-
-
+                
                 </form>
             </div>
             <div class="col mt-3">

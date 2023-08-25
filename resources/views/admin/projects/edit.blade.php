@@ -19,7 +19,7 @@
                     </div>
                     
             @endif
-            <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
+            <form action="{{route('admin.projects.update', $project->id)}}" enctype="multipart/form-data" method="POST">
                 {{-- token obbligatorio --}}
                 @csrf
                 @method('PUT')
@@ -27,7 +27,15 @@
                     <label class="control-table">Titolo</label>
                     <input type="text" name="title" id="title" class="form-control"  value="{{ old('title') ?? $project->title}}">
                 </div>
-                
+
+                <div class="form-group">
+                    <div class="content-image my-3">
+                        <img src="{{asset('storage/' . $project->cover_image)}}" alt="">
+                    </div>
+                    <label class="control-table pe-3">Immagine di copertina</label><br>
+                    <input type="file" class="control-table" name="cover_image"  id="cover_image" >
+                </div>
+
                 <div class="form-group mb-3 ">
                     <label class="control-table">Content</label>
                     {{-- <input type="text" name="title" id="title" required> --}}
