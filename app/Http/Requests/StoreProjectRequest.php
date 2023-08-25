@@ -24,7 +24,9 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|max:50'
+            'title'=>'required|max:50',
+            'cover_image'=>'image|max:250'
+
 
         ];
 
@@ -38,7 +40,8 @@ class StoreProjectRequest extends FormRequest
         return [
 
             'title.required'=>'il titolo e obbligatorio',
-            'title.max'=>'ERRORE: il titolo supera il limite di caratteri consentito (50)'
+            'title.max'=>'ERRORE: il titolo supera il limite di caratteri consentito (50)',
+            'cover_image.image'=>'ERRORE: assicurati che il file caricato sia in formato png, jpeg, jpg'
 
         ];
 
